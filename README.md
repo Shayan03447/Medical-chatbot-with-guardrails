@@ -35,21 +35,16 @@ graph TD
 
 ## 🔄 Workflow
 
-User Input
-↓
-Safety Middleware
-↓
-PII Redaction
-↓
-LLM Decision (GPT-4o)
-↓
-Tool Execution (if needed)
-↓
-Human Approval (if required)
-↓
-Output Validation
-↓
-Final Response
+```mermaid
+graph TD
+    User["User Input"] --> Middleware["Safety Middleware"]
+    Middleware --> PII["PII Redaction"]
+    PII --> LLM["LLM Decision (GPT-4o)"]
+    LLM --> Tools["Tool Execution (if needed)"]
+    Tools --> Approval["Human Approval (if required)"]
+    Approval --> Output["Output Validation"]
+    Output --> Response["Final Response"]
+```
 
 
 ---
